@@ -1,4 +1,11 @@
-<h1>Books#index</h1>
+<h1>User Info</h1>
+  <% if book.image.attached? %>
+    <%= image_tag book.image, size: "200x200" %>
+  <% else %>
+    <%= image_tag '13116_Tower_of_the_Sun_Expo_Commemoration_Parl_Suita_Osaka_pref_Japan01s3.jpg', size: "200x200" %>
+  <% end %>
+  
+  
 <p>Find me in app/views/books/index.html.erb</p>
 
 <h1>New book</h1>
