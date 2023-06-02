@@ -1,9 +1,21 @@
 <h1>User Info</h1>
+  <div>
+    <%= image_tag @user.get_profile_image(100,100) %>
+    <% if @user == current_user %>
+    
+    <p><%= link_to edit_user_path,  method: :get do %>
+    <i class="fas fa-user-cog"></i></p>
+    <% end %>
+    <% end %>
+
+  </div>
   <% if book.image.attached? %>
     <%= image_tag book.image, size: "200x200" %>
   <% else %>
     <%= image_tag '13116_Tower_of_the_Sun_Expo_Commemoration_Parl_Suita_Osaka_pref_Japan01s3.jpg', size: "200x200" %>
   <% end %>
+  
+  
   
   
 <p>Find me in app/views/books/index.html.erb</p>
@@ -19,3 +31,15 @@
   <%= f.submit 'Create Book' %>
 
 <% end %>
+
+
+<h1>Books</h1>
+
+<% @book.each do |book| %>
+
+<div>
+  
+  
+</div>
+<%= image_tag book.user.get_profile_image(100,100) %>
+
