@@ -1,3 +1,7 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
 <h1>User Info</h1>
   <div>
     <%= image_tag @user.get_profile_image(100,100) %>
@@ -10,9 +14,9 @@
 
   </div>
   <% if book.image.attached? %>
-    <%= image_tag book.image, size: "200x200" %>
+    <%= image_tag book.image, size: "100x100" %>
   <% else %>
-    <%= image_tag '13116_Tower_of_the_Sun_Expo_Commemoration_Parl_Suita_Osaka_pref_Japan01s3.jpg', size: "200x200" %>
+    <%= image_tag '13116_Tower_of_the_Sun_Expo_Commemoration_Parl_Suita_Osaka_pref_Japan01s3.jpg', size: "100x100" %>
   <% end %>
   
   
