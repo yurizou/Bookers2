@@ -2,27 +2,28 @@
   <%= flash[:notice] %>
 </div>
 
-<h1>User Info</h1>
-  <div>
-    <%= image_tag @user.get_profile_image(100,100) %>
-    <tr>
-      <th>name</th>
-      <th><%= @user.name</th>
-    </tr>
-  　
-  　<tr>
-  　 <th>introduction</th>
-  　 <th> <%= @user.
-    
-   
-    <% if @user == current_user %>
+<%= render 'userinfo' , user: @user %>
+<!--<h1>User Info</h1>-->
+<!--  <div>-->
+<!--    <%#= image_tag @user.get_profile_image(100,100) %>-->
+<!--    <tr>-->
+<!--      <th>name</th>-->
+<!--      <th><%#= @user.name</th>-->
+<!--    </tr>-->
 
-    <p><%= link_to edit_user_path(current_user.id) do %>
-    <i class="fas fa-user-cog"></i></p>
-    <% end %>
-    <% end %>
+<!--  　<tr>-->
+<!--  　 <th>introduction</th>-->
+<!--  　 <th> <%= @user.-->
 
-  </div>
+
+<!--    <% if @user == current_user %>-->
+
+<!--    <p><%#= link_to edit_user_path(current_user.id) do %>-->
+<!--    <i class="fas fa-user-cog"></i></p>-->
+<!--    <%# end %>-->
+<!--    <%# end %>-->
+
+<!--  </div>-->
 
 <h1>New book</h1>
 <%= form_with model: Book.new do |f| %>
