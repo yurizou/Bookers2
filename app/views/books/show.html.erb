@@ -10,8 +10,17 @@
   <%= image_tag '13116_Tower_of_the_Sun_Expo_Commemoration_Parl_Suita_Osaka_pref_Japan01s3.jpg', size: "100x100" %>
 <% end %>
 
-<p><%= @user.name %></p>
-<p><%= @book.title %></p>
+<p>
+ <%= link_to user_path(@user.id) do %>
+ <%= @user.name %>
+ <% end %>
+</p>
+
+<p>
+  <%= link_to book_path(@book.id) %>
+  <%= book.title %>
+  <% end %>
+</p>
 <p><%= @book.body %></p>
 
 <%= link_to "Edit", edit_book_path(@book.id) %>
