@@ -4,28 +4,28 @@
 <%= render 'userinfo' , user: @user %>
 
 <h1>Book deteil</h1>
-
-
-<% if @user.get_profile_image(100,100) %>
-  <%= image_tag @user.get_profile_image(100,100) %>
+<table>
+ <tr>
+  <% if @user.get_profile_image(100,100) %>
+ <th> <%= image_tag @user.get_profile_image(100,100) %></th>
 <% else %>
-  <%= image_tag '13116_Tower_of_the_Sun_Expo_Commemoration_Parl_Suita_Osaka_pref_Japan01s3.jpg', size: "100x100" %>
+  <th><%= image_tag '13116_Tower_of_the_Sun_Expo_Commemoration_Parl_Suita_Osaka_pref_Japan01s3.jpg', size: "100x100" %></th>
 <% end %>
-
-<p>
- <%= link_to user_path(@user.id) do %>
- <%= @user.name %>
- <% end %>
-</p>
-
-<p>
-  <%= link_to book_path(@book.id) do %>
-  <%= @book.title %>
-  <% end %>
-</p>
-<p><%= @book.body %></p>
-
-<%= link_to "Edit", edit_book_path(@book.id) %>
-<%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+  <%= link_to user_path(@user.id) do %>
+    <p><%= @user.name %></p>
+   
+   <% end %>
 
 
+
+  <th>
+    <%= link_to book_path(@book.id) do %>
+    <%= @book.title %>
+    <% end %>
+  </th>
+  <th><%= @book.body %></th>
+
+  <th><%= link_to "Edit", edit_book_path(@book.id) %></th>
+  <th><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></th>
+ </tr>
+</table>
