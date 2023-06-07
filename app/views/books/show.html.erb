@@ -17,7 +17,7 @@
             <th><%= image_tag '13116_Tower_of_the_Sun_Expo_Commemoration_Parl_Suita_Osaka_pref_Japan01s3.jpg', size: "100x100" %></th>
             <% end %>
             <%= link_to user_path(@user.id) do %>
-            <p><%= @user.name %></p>
+            <%= @user.name %>
    
              <% end %>
             <th>
@@ -27,22 +27,21 @@
             </th>
             <th><%= @book.body %></th>
 
-            <th>
-              <%= link_to edit_book_path(@book.id), class: 'btn btn-success' do %>
-              Edit
-              <% end %>
-            </th>
-            <th>
-              <%= link_to book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-sm btn-danger' do %>
-              Destroy
-              <% end %>
-            </th>
-        </tr>
-     </tbody>
-    </table>
+              <th>
+                <%= link_to edit_book_path(@book.id), class: 'btn btn-success' do %>
+                Edit
+                <% end %>
+              </th>
+               <th>
+                <%= link_to book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-sm btn-danger' do %>
+                Destroy
+                <% end %>
+              </th>
+           </tr>
+         </tbody>
+      </table>
+    </div>
   </div>
-</div>
-  
 </div>
 
 
