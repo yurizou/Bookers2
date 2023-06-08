@@ -7,11 +7,19 @@ class UsersController < ApplicationController
   
 
   def update
-    @user = User.find(params[:id])
-    @user.update(user_params)
+    @user = User.new(user_params)
+    @user.user_id = current_user_id
     flash[:notice] = "You have updated user successfully."
-    redirect_to user_path(@user.id)
+    if @user.update
+      redirect_to user_path(@user.id)
+    else
+      @users = User.all
+      @user = current_user_id
+      render :edit
+    end
   end
+
+
 
   def index
     @users = User.all
