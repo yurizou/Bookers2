@@ -28,13 +28,17 @@
             <th><%= @book.body %></th>
 
               <th>
+                <% if @book.user == current_user %>
                 <%= link_to edit_book_path(@book.id), class: 'btn btn-success' do %>
                 Edit
                 <% end %>
+                <% end %>
               </th>
                <th>
-                <%= link_to book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-sm btn-danger' do %>
-                Destroy
+                <% if @book.user == current_user %>
+                  <%= link_to book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-sm btn-danger' do %>
+                  Destroy
+                <% end %>
                 <% end %>
               </th>
            </tr>
@@ -43,7 +47,6 @@
     </div>
   </div>
 </div>
-
 
 
 
