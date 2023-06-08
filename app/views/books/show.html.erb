@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-       <%= render 'userinfo' , user: @user %>
+       <%= render 'userinfo' , user: @user, book: @book %>
     </div>
   <div class="col-md-8 offset-md-1">
     <h2>Book deteil</h2>
@@ -18,7 +18,7 @@
             <% end %>
             <%= link_to user_path(@user.id) do %>
             <%= @user.name %>
-   
+
              <% end %>
             <th>
             <%= link_to book_path(@book.id) do %>
