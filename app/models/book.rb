@@ -7,7 +7,7 @@ class Book < ApplicationRecord
     if @book.save
       redirect_to book_path
     else
-      render :new
+      render :show
     end
   
   end
