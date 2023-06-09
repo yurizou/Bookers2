@@ -8,13 +8,13 @@ class UsersController < ApplicationController
 
   def update
     @user = User.new(user_params)
-    @user.user_id = current_user_id
+    user.id = current_user_id
     flash[:notice] = "You have updated user successfully."
     if @user.update
       redirect_to user_path(@user.id)
     else
-      @users = User.all
-      @user = current_user_id
+      # @users = User.all
+      # @user = current_user_id
       render :edit
     end
   end
