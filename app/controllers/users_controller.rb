@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.new(user_params)
-    user.id = current_user_id
     flash[:notice] = "You have updated user successfully."
     if @user.update
       redirect_to user_path(@user.id)
