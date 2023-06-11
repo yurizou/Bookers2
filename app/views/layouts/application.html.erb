@@ -17,12 +17,12 @@
           <%= link_to root_path, class: 'text-light' do %>
              Bookers
           <% end %>
-             
+
             <div class="collapse navbar-collapse"></div>
         <% if user_signed_in? %>
-        
+
           <li>
-           <%= link_to root_path, class: 'text-light' do %>
+           <%= link_to user_path(current_user), class: 'text-light' do %>
              <i class="fas fa-home"></i>Home
            <% end %>
           </li>
@@ -38,8 +38,8 @@
           </li>
           <li>
           <%= link_to destroy_user_session_path, method: :delete, class: 'text-light' do %>
-             <i class="fas fa-sign-out-alt"></i>Log-out
-          <% end %>   
+             <i class="fas fa-sign-out-alt"></i>Log out
+          <% end %>
           </li>
         <% else %>
           <li>
@@ -78,8 +78,8 @@
           <p>CopyRight Infratop.inc</p>
         </div>
       </div>
-      
-      
+
+
     </div>
   </footer>
 </body>
